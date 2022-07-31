@@ -5,7 +5,7 @@ import java.util.List;
 import com.ekart.dto.ProductDTO;
 import com.ekart.exception.EKartException;
 
-public interface SellerProductService extends CustomerProductService {
+public interface SellerProductService {
 
 	Integer addNewProduct(ProductDTO productDTO) throws EKartException;
 

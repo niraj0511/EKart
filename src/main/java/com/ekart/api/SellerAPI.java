@@ -114,5 +114,4 @@ public class SellerAPI{
 		return new ResponseEntity<>(productDTOs,HttpStatus.OK);
 	}
 
-
 }

@@ -9,24 +9,19 @@ import org.springframework.stereotype.Service;
 
 import com.ekart.dto.ProductDTO;
 import com.ekart.entity.Product;
-import com.ekart.entity.ProductCategory;
 import com.ekart.entity.Seller;
 import com.ekart.exception.EKartException;
-import com.ekart.repository.ProductCategoryRepository;
 import com.ekart.repository.ProductRepository;
 import com.ekart.repository.SellerRepository;
 
 @Service(value = "sellerProductService")
-public class SellerProductServiceImpl extends CustomerProductServiceImpl implements SellerProductService {
+public class SellerProductServiceImpl implements SellerProductService {
 	
 	@Autowired
 	private ProductRepository productRepository;
 
 	@Autowired
 	private SellerRepository sellerRepository;
-
-	@Autowired
-	private ProductCategoryRepository productCategoryRepository;
 
 	@Override
 	public Integer addNewProduct(ProductDTO productDTO) throws EKartException {
