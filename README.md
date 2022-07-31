@@ -2,25 +2,36 @@
 Customer API's:
 
 Search and list for products based on:
-1. product name: 
+
+
+product name: 
 curl --location -g --request GET 'http://localhost:8080/customer-api/productName/{product}'
+
 
 Please add actual productname instead of {product} eg.Dell, Lenovo, Oneplus
 
-2. product type
+
+
+product type
 curl --location --request GET 'http://localhost:8080/customer-api/productType?type=Mobile'
 
 eg.type=Mobile, Laptop, etc
-3. product category
+
+
+product category
 curl --location --request GET 'http://localhost:8080/customer-api/productCategories'
 
-4. product price range (includingmix and max):
+
+product price range (includingmix and max):
 curl --location --request GET 'http://localhost:8080/customer-api/productInPriceRange?min=40000&max=115000'
+
 
 
 Seller API's:
 
-1.Add one or many products:
+
+Add one or many products:
+
 curl --location --request POST 'http://localhost:8080/seller-api/sellers/addProducts' \
 --header 'Content-Type: application/json' \
 --data-raw '{
@@ -34,10 +45,15 @@ curl --location --request POST 'http://localhost:8080/seller-api/sellers/addProd
   "sellerEmail": "sellerEmail"
 }'
 
-2. can view product list added by them
+
+can view product list added by them
+
 curl --location --request GET 'http://localhost:8080/seller-api/ProductsBySeller?seller=rahul@gmail.com'
 
-3. can update products (only added by them)
+
+can update products (only added by them)
+
+
 curl --location --request PUT 'http://localhost:8080/seller-api/products' \
 --header 'Content-Type: application/json' \
 --data-raw '{
@@ -51,7 +67,9 @@ curl --location --request PUT 'http://localhost:8080/seller-api/products' \
   "sellerEmail": "rakesh@gmail.com"
 }'
 
-3. can delete products (only added by them)
+
+can delete products (only added by them)
+
 curl --location --request DELETE 'http://localhost:8080/seller-api//sellers/removeProducts' \
 --header 'Content-Type: application/json' \
 --data-raw '{
@@ -65,19 +83,32 @@ curl --location --request DELETE 'http://localhost:8080/seller-api//sellers/remo
   "sellerEmail": "rakesh@gmail.com"
 }'
 
-4. also has features and functionlities of a “Customer”
-a. product name: 
+
+also has features and functionlities of a “Customer”
+
+product name: 
+
 curl --location -g --request GET 'http://localhost:8080/seller-api/productName/{product}'
+
 
 Please add actual productname instead of {product} eg.Dell, Lenovo, Oneplus
 
-b. product type
+
+product type
+
 curl --location --request GET 'http://localhost:8080/seller-api/productType?type=Mobile'
+
 
 eg.type=Mobile, Laptop, etc
 
-c. product category
+
+
+product category
+
 curl --location --request GET 'http://localhost:8080/seller-api/productCategories'
 
-d. product price range (includingmix and max):
+
+
+product price range (includingmix and max):
+
 curl --location --request GET 'http://localhost:8080/seller-api/productInPriceRange?min=40000&max=115000'
