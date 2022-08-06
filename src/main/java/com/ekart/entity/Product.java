@@ -7,11 +7,36 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import lombok.Data;
 
+@Data
 @Entity
 @Table(name="EK_PRODUCT")
 public class Product {
-
+	public Product() {
+	}
+	public Product(Integer productId, String category, String type, String name, String model,Double price,
+			Integer quantity) {
+		this.productId = productId;
+		this.name = name;
+		this.category = category;
+		this.model = model;
+		this.type = type;
+		this.price = price;
+		this.quantity = quantity;
+	}
+	public Product(Integer productId, String name, String category, String model, String type, Double price,
+			Integer quantity, String sellerEmail) {
+		this.productId = productId;
+		this.name = name;
+		this.category = category;
+		this.model = model;
+		this.type = type;
+		this.price = price;
+		this.quantity = quantity;
+		this.sellerEmail = sellerEmail;
+	}
+	
 	@Id
 	@Column(name="PRODUCT_ID")
 	@GeneratedValue(strategy=GenerationType.IDENTITY)

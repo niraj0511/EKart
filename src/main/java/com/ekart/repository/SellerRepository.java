@@ -1,8 +1,9 @@
 package com.ekart.repository;
 
-import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.repository.CrudRepository;
+
 import com.ekart.entity.Seller;
 
-public interface SellerRepository extends JpaRepository<Seller, String> {
+public interface SellerRepository extends CrudRepository<Seller, String> {
 	
 }

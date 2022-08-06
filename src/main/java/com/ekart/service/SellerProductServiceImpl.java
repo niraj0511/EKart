@@ -48,6 +48,7 @@ public class SellerProductServiceImpl implements SellerProductService {
 			product.setPrice(productDTO.getPrice());
 			product.setQuantity(productDTO.getQuantity());
 		}
+		
 		return productDTO;
 	}
 

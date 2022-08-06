@@ -1,10 +1,22 @@
 package com.ekart.dto;
 
-import lombok.Data;
+import java.util.List;
 
-@Data
 public class ProductDTO {
 
+	public ProductDTO() {
+	
+	}
+	public ProductDTO(Integer productId, String category, String type, String name, String model,Double price,
+			Integer quantity) {
+		this.productId = productId;
+		this.name = name;
+		this.category = category;
+		this.model = model;
+		this.type = type;
+		this.price = price;
+		this.quantity = quantity;
+	}
 	private Integer productId;
 	private String name;
 	private String category;
@@ -15,7 +27,6 @@ public class ProductDTO {
 	private String sellerEmail;
 	private String errorMessage;
 	private String successMessage;
-	
 	public String getErrorMessage() {
 		return errorMessage;
 	}

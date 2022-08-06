@@ -8,9 +8,12 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import lombok.Data;
+
 import javax.persistence.Column;
 
-
+@Data
 @Entity
 @Table (name="EK_SELLER")
 public class Seller {

@@ -5,7 +5,7 @@ Search and list for products based on:
 
 
 product name: 
-curl --location -g --request GET 'http://localhost:8080/customer-api/productName/{product}'
+curl --location -g --request GET 'http://localhost:8080/customer-api/productName/?product=Dell'
 
 
 Please add actual productname instead of {product} eg.Dell, Lenovo, Oneplus

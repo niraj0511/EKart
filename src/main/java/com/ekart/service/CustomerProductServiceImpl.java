@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.ekart.dto.ProductCategoryDTO;
 import com.ekart.dto.ProductDTO;
 import com.ekart.entity.Product;
 import com.ekart.entity.ProductCategory;
@@ -42,11 +43,11 @@ public class CustomerProductServiceImpl implements CustomerProductService {
 	}
 	
 	@Override
-	public List<ProductDTO> getAllProductCategories() throws EKartException {
+	public List<ProductCategoryDTO> getAllProductCategories() throws EKartException {
 		Iterable<ProductCategory> products = productCategoryRepository.findAll();
-		List<ProductDTO> productDTOs = new ArrayList<>();
+		List<ProductCategoryDTO> productDTOs = new ArrayList<>();
 		products.forEach(product -> {
-			ProductDTO productDTO = new ProductDTO();
+			ProductCategoryDTO productDTO = new ProductCategoryDTO();
 			productDTO.setCategory(product.getCategory());
 			productDTOs.add(productDTO);
 		});
@@ -55,8 +56,8 @@ public class CustomerProductServiceImpl implements CustomerProductService {
 	
 	
 	@Override
-	public List<ProductDTO> getAllProductTypes(String name) throws EKartException {
-				Iterable<Product> products = productRepository.findAllByName(name);
+	public List<ProductDTO> getAllProductTypes(String type) throws EKartException {
+				Iterable<Product> products = productRepository.findAllByType(type);
 				List<ProductDTO> productDTOs = new ArrayList<>();
 				products.forEach(product -> {
 					ProductDTO productDTO = new ProductDTO();
